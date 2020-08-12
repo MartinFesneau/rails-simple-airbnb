@@ -1,0 +1,17 @@
+
+div.container
+<div class="d-flex justify-content-around flex-wrap flex-start mt-3">
+<% @flats.each do |flat| %>
+<div class="rounded" style="width: 19rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/random/286x180" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+    <p class="card-text"><i class="fas fa-user-friends"> <%= flat.number_of_guests %></i>   <i class="fas fa-euro-sign"> <%= flat.price_per_night %></i></p>
+    <a href="#" class="card-link"><%= link_to 'More info', flat_path(flat.id)  %></a>
+    <a href="#" class="card-link">Edit</a>
+    <a href="#" class="card-link">Remove</a>
+  </div>
+</div>
+<% end %>
+</div>
